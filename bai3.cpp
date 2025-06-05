@@ -17,14 +17,14 @@ int main(){
     cin >> xO >> yO;
     cout << "Nhap ban kinh duong tron: ";
     cin >> r;
-    cout << "Nhap toa do diem M: ";
+    cout << "Nhap toa do diem M(xM, yM): ";
     cin >> xM >> yM;
     d = abs(sqrt(pow((xO-xM), 2) + pow((yO-yM), 2)));
     if (d<r){
         cout << "Diem M nam trong duong tron (O)";
-    }if(d==r){
+    }else if(d==r){
         cout << "Diem M nam tren duong tron (O)";
-    }if(d>r){
+    }else{
         cout << "Diem M nam ngoai duong tron (O)";
     }
     cin.get();
