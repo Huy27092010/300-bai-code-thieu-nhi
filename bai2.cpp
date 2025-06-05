@@ -11,13 +11,13 @@
 using namespace std;
 
 int main(){
-    double xA, yA, xB, yB;
+    float xA, yA, xB, yB;
     cout << "Toa do diem A(xA, yA): ";
     cin >> xA >> yA;
     cout << "Toa do diem B(xB, yB): ";
     cin >> xB >> yB;
-    double ab = abs(sqrt(pow((xA-xB), 2) + pow((yA-yB), 2)));
-    cout << "Khoang cach giua hai diem A va B la: " << ab;
-    cin.get();
+    float ab = abs(sqrt(pow((xA-xB), 2) + pow((yA-yB), 2)));
+    cout << "Khoang cach giua hai diem A va B la: " << ab << endl;
+    system("pause");
     return 0;
 }
