@@ -21,12 +21,12 @@ int main(){
     cin >> xM >> yM;
     d = abs(sqrt(pow((xO-xM), 2) + pow((yO-yM), 2)));
     if (d<r){
-        cout << "Diem M nam trong duong tron (O)";
+        cout << "Diem M nam trong duong tron (O)" << endl;
     }else if(d==r){
-        cout << "Diem M nam tren duong tron (O)";
+        cout << "Diem M nam tren duong tron (O)" << endl;
     }else{
-        cout << "Diem M nam ngoai duong tron (O)";
+        cout << "Diem M nam ngoai duong tron (O)" << endl;
     }
-    cin.get();
+    system("pause");
     return 0;
 }
