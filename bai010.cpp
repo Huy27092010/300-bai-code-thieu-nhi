@@ -1,3 +1,4 @@
+//code: Đặng Quang Huy
 // Số bảo hiểm xã hội của Canada (SIN - Canadian Social Insurance Number) là một số có 9 chữ số, được kiểm tra tính hợp lệ như sau:
 // - Số phải nhất (vị trí là 1, tính từ phải sang), là số kiểm tra (check digit).
 // - Trọng số được tính từ phải qua trái (không tính check digit), bằng s1 + s2:
