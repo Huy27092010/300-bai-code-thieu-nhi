@@ -4,10 +4,6 @@
 // Công thức Heron¹ dùng tính diện tích tam giác theo chu vi:
 //      S = sqrt(p*(p-a)*(p-b)*(p-c))
 //      p = (a + b + c)/2
-// Gợi ý:
-//      Nếu c² < a² + b² → tam giác nhọn
-//      Nếu c² == a² + b² → tam giác vuông
-//      Nếu c² > a² + b² → tam giác tù
 // Ví dụ:
 //      Nhap 3 canh tam giac: 3 4 5
 //      Tam giac vuong
@@ -16,32 +12,42 @@
 
 #include <iostream>
 #include <math.h>
+#define eps 1e-10
 using namespace std;
 
 int main(){
-    float a, b, c, p, s;
+    double a, b, c, p, s;
     cout << "Nhap do dai 3 canh cua tam giac: ";
     cin >> a >> b >> c;
-    if(a>0 && b>0 && c>0 && (a+b)>c && (a+c)>b && (b+c)>a){
-        float a2 = a*a, b2 = b*b, c2 = c*c;
+    if(a>0 && b>0 && c>0 && (a+b)>c && (a+c)>b && (b+c)>a){ //kiem tra tinh ton tai cua tam giac
+        unsigned f = 0;
+        if(fabs(a - b)<eps||fabs(a - c)<eps||fabs(b - c)<eps) f+=1; //tam giac can
+        if(fabs(a - b)<eps && fabs(a - c)<eps) f+=1; //tam giac deu
+        if(fabs(a*a + b*b - c*c) < eps || fabs(a*a + c*c - b*b) < eps || fabs(b*b + c*c - a*a ) < eps) f+=3; //tam giac vuong
+        switch (f){
+            case 0:
+                cout << "Tam giac thuong\n" ;
+                break;
+            
+            case 1:
+                cout << "Tam giac can\n";
+                break;
+            case 2:
+                cout << "Tam giac deu\n";
+                break;
+            case 3:
+                cout << "Tam giac vuong\n";
+                break;
+            case 4:
+                cout << "Tam giac vuong can\n";
+                break;
+        }
         p = (a + b + c)/2;
         s = sqrt(p*(p-a)*(p-b)*(p-c));
-        if (a>b) swap(a, b);
-        if (b>c) swap(b, c);
-        if (a>c) swap(a, c);
-        if((a2 + b2)>c2){
-            cout << "Tam giac nhon" << endl;
-            cout << "Dien tich S = " << s << endl;
-        }else if((a2 + b2)<c2){
-            cout << "Tam giac tu" << endl;
-            cout << "Dien tich S = " << s << endl;
-        }else{
-            cout << "Tam giac vuong" << endl;
-            cout << "Dien tich S = " << s << endl;
-        }
+        cout << "Dien tich tam giac S = " << s << endl;
     }else{
-        cout << "Tam giac khong ton tai" << endl;
+        cout << "Tam giac khong ton tai\n";
     }
-    system("pause");
+    cin.ignore(); cin.get();
     return 0;
 }
