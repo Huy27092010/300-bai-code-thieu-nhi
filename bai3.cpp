@@ -27,6 +27,6 @@ int main(){
     }else{
         cout << "Diem M nam ngoai duong tron (O)" << endl;
     }
-    system("pause");
+    cin.ignore(); cin.get();
     return 0;
 }
