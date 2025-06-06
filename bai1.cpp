@@ -16,6 +16,6 @@ int main(){
     float r = sqrt(s/(4*M_PI));
     float v = (4.0/3.0)*M_PI*pow(r, 3);
     cout << "The tich hinh cau la: " << v << endl;
-    system("pause");
+    cin.ignore(); cin.get();
     return 0;
 }
