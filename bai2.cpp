@@ -18,6 +18,6 @@ int main(){
     cin >> xB >> yB;
     float ab = abs(sqrt(pow((xA-xB), 2) + pow((yA-yB), 2)));
     cout << "Khoang cach giua hai diem A va B la: " << ab << endl;
-    system("pause");
+    cin.ignore(); cin.get();
     return 0;
 }
