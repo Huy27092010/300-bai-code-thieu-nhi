@@ -14,7 +14,7 @@ int main(){
     cout << "Nhap dien tich mat cau: ";
     cin >> s;
     float r = sqrt(s/(4*M_PI));
-    float v = (4.0/3.0)*M_PI*pow(r, 3);
+    float v = (4.0/3.0)*M_PI*pow(r, 3);    //tính thể tích
     cout << "The tich hinh cau la: " << v << endl;
     cin.ignore(); cin.get();
     return 0;
